@@ -1,0 +1,42 @@
+
+
+struct pcb
+{
+  String model ; // Nombre del modelo
+  int npd ;       // Numero de pines digitales
+  int npa ;       // Numero de pines analogicos
+  float volt ;    // Tension de funcionamiento
+} ;
+
+void setup() {
+
+  Serial.begin(115200);
+  pcb PLACA_UNO_R3;
+
+  // Asignación de valores
+  PLACA_UNO_R3.model = "uno" ;
+  PLACA_UNO_R3.npd = 13 ;
+  PLACA_UNO_R3.npa = 5 ;
+  PLACA_UNO_R3.volt = 5.0F ;
+
+  // Lectura de valores
+  int numpd = PLACA_UNO_R3.npd ;
+  float voltage = PLACA_UNO_R3.volt ;
+
+  Serial.print("\nVoltaje: ");
+  Serial.println(voltage);
+  
+  Serial.print("Numero de pines digitales: ");
+  Serial.println(numpd);
+  
+  Serial.print("Numero de pines analogicos: ");
+  Serial.println(PLACA_UNO_R3.npa);  
+    
+  Serial.print("Modelo de PCB: ");
+  Serial.println(PLACA_UNO_R3.model);
+
+}
+
+void loop() {
+
+}
